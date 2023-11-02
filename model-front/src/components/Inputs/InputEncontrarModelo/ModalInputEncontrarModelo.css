@@ -1,0 +1,57 @@
+.caixaModal {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  position: relative;
+  top: 25%;
+}
+
+.ModalColumn {
+  background-color: white;
+}
+
+.caixa {
+  display: flex;
+  justify-content: center;
+}
+#campoId {
+  padding: 10px;
+}
+
+.Form_Field {
+  text-align: center;
+}
+
+#buttonModalFechar {
+  grid-row-start: 2;
+  grid-column-start: 3;
+  width: 55px;
+  align-self: right;
+}
+
+.caixa {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 2px;
+}
+.Form_Btn {
+  justify-self: center;
+}
+
+#foto {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+}
+
+#medidas {
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+#fotoModal {
+  height: auto;
+  width: 400px;
+  justify-self: center;
+  align-self: center;
+}

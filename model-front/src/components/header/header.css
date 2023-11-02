@@ -1,0 +1,15 @@
+.app-header {
+    height: 20%;
+    align-items: center;
+    background: rgb(104, 5, 233);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+img {
+    height: 60px;
+    width: 220px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}

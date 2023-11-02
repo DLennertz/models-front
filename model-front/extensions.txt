@@ -1,0 +1,4 @@
+ npm install axios
+ npm i react-router-dom
+ npm i material-table
+ npm install @mui/icons-material

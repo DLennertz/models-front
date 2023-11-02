@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 5px;
+}
+.cardFoto {
+  display: block;
+  width: 270px;
+  height: 350px;
+}
+
+.cardNome {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.cardInfo {
+  display: flex;
+}
+
+.cardInfoBox {
+  width: 50%;
+}

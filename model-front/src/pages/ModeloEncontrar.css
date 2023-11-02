@@ -1,0 +1,17 @@
+#container{
+    display: flex;
+}
+
+.Header{
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.campo{
+    display: grid;
+    justify-items: center;
+    position: absolute;
+    margin-left: 200px;
+}
+
+
