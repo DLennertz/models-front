@@ -43,12 +43,12 @@ const InputCadastrarModeloSemFoto = () => {
       rating: values.rating,
       boys: values.boys,
       girls: values.girls,
-      foto: values.foto
+      photos: [{ url: values.foto }],
     };
     console.log(data);
     const jsonData = JSON.stringify(data);
     const newModel = new Blob([jsonData], {
-      type: "application/json"
+      type: "application/json",
     });
 
     formDataModelo.append("newModel", newModel);
@@ -79,7 +79,7 @@ const InputCadastrarModeloSemFoto = () => {
           rating: "",
           boys: "",
           girls: "",
-          foto: ""
+          foto: "",
         }}
         onSubmit={handleSubmit}
         validationSchema={validations}
