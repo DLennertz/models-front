@@ -4,7 +4,7 @@ export default class ModeloService {
   getTotal() {
     return api
       .get("/model/count", {
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -12,7 +12,7 @@ export default class ModeloService {
   getAniversariante() {
     return api
       .get("/model/aniversariante", {
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -20,7 +20,7 @@ export default class ModeloService {
   getStats() {
     return api
       .get("/model/stats", {
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -31,16 +31,22 @@ export default class ModeloService {
         params: {
           pageNumber: pageNumber,
           pageSize: pageSize,
-          orderBy: orderBy
-        }
+          orderBy: orderBy,
+        },
       })
+      .then((res) => res.data);
+  }
+
+  getAll() {
+    return api
+      .get("/model/all", { auth: { username: "usuario", password: "123456" } })
       .then((res) => res.data);
   }
 
   getModeloId(id) {
     return api
       .get("/model/" + id, {
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -48,7 +54,7 @@ export default class ModeloService {
   deleteModeloId(id) {
     return api
       .delete("/model/" + id, {
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -58,9 +64,9 @@ export default class ModeloService {
       .post("/model/save", newModel, {
         headers: {
           Accept: "application/json",
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
         },
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -70,9 +76,9 @@ export default class ModeloService {
       .post("/model/saveSemFoto", newModel, {
         headers: {
           Accept: "application/json",
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
         },
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -82,9 +88,9 @@ export default class ModeloService {
       .put("/model/update", newModel, {
         headers: {
           Accept: "application/json",
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
         },
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }
@@ -94,9 +100,9 @@ export default class ModeloService {
       .put("/model/updateSemFoto", newModel, {
         headers: {
           Accept: "application/json",
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
         },
-        auth: { username: "usuario", password: "123456" }
+        auth: { username: "usuario", password: "123456" },
       })
       .then((res) => res.data);
   }

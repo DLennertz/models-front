@@ -12,11 +12,10 @@ import "./tableModelo.css";
 
 const TableModelo = () => {
   const [data, setModelos] = useState([]);
-  
 
   useEffect(() => {
     const modeloService = new ModeloService();
-    modeloService.getModelo().then((data) => setModelos(data));
+    modeloService.getAll().then((data) => setModelos(data));
   }, []);
 
   return (
