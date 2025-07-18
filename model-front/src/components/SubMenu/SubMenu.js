@@ -10,7 +10,7 @@ const SubMenu = () => {
       <Link
         className={currCount === 0 && "active"}
         href="#listar"
-        to="/ListarModelo"
+        to="/modelo/listar"
       >
         <span className={currCount === 0 && "text-active"}>
           <i className="fas fa-arrow-right"></i>Listar
@@ -19,7 +19,7 @@ const SubMenu = () => {
       <Link
         className={currCount === 1 && "active"}
         href="#achar"
-        to="/EncontrarModelo"
+        to="/modelo/buscar"
       >
         <span className={currCount === 1 && "text-active"}>
           <i className="fas fa-arrow-right"></i>Achar
@@ -28,7 +28,7 @@ const SubMenu = () => {
       <Link
         className={currCount === 2 && "active"}
         href="#cadastrarSemFoto"
-        to="/CadastrarModelo"
+        to="/modelo/cadastro"
       >
         <span className={currCount === 2 && "text-active"}>
           <i className="fas fa-arrow-right"></i>Cadastrar
@@ -37,7 +37,7 @@ const SubMenu = () => {
       <Link
         className={currCount === 3 && "active"}
         href="#atualizarSemFoto"
-        to="/AtualizarModelo"
+        to="/modelo/alterar"
       >
         <span className={currCount === 3 && "text-active"}>
           <i className="fas fa-arrow-right"></i>Atualizar
@@ -46,7 +46,7 @@ const SubMenu = () => {
       <Link
         className={currCount === 4 && "active"}
         href="#deleter"
-        to="/DeletarModelo"
+        to="/modelo/deletar"
       >
         <span className={currCount === 4 && "text-active"}>
           <i className="fas fa-arrow-right"></i>Deletar

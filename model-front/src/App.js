@@ -17,12 +17,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
-        <Route path="/Modelo/:page" element={<Modelo />} />
-        <Route path="/CadastrarModelo" element={<ModeloCadastroSemFoto />} />
-        <Route path="/EncontrarModelo" element={<ModeloEncontrar />} />
-        <Route path="/ListarModelo" element={<ModeloListar />} />
-        <Route path="/AtualizarModelo" element={<ModeloAtualizarSemFoto />} />
-        <Route path="/DeletarModelo" element={<ModeloDeletar />} />
+        <Route path="/modelo/:page" element={<Modelo />} />
+        <Route path="/modelo/cadastro" element={<ModeloCadastroSemFoto />} />
+        <Route path="/modelo/buscar" element={<ModeloEncontrar />} />
+        <Route path="/modelo/listar" element={<ModeloListar />} />
+        <Route path="/modelo/alterar" element={<ModeloAtualizarSemFoto />} />
+        <Route path="/modelo/deletar" element={<ModeloDeletar />} />
         <Route path="/Perfil/:id" element={<ModeloPerfil />} />
         <Route path="/Stats" element={<StatsPage />} />
       </Routes>
