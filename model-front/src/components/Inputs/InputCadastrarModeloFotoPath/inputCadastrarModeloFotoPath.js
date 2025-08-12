@@ -110,7 +110,7 @@ const InputCadastrarModeloSemFoto = () => {
               >
                 <option value="">--Escolha um país--</option>
                 {country.map((item) => (
-                  <option value={item.idCountry}>{item.nameCountry}</option>
+                  <option value={item.id}>{item.name}</option>
                 ))}
               </Field>
               <ErrorMessage
