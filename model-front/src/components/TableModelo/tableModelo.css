@@ -1,0 +1,18 @@
+.table-container {
+    width: 100%;
+  }
+  
+  .detail-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 6px;
+  }
+  
+  .detail-item {
+    flex: 1 1 150px;
+    font-size: 0.9rem;
+  }
+  

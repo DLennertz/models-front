@@ -1,66 +1,87 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ModeloService from "../../services/ModeloService";
 import MaterialTable from "material-table";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./tableModelo.css";
 
-<MaterialTable
-  // other props
-  options={{
-    search: true,
-  }}
-/>;
+const columns = [
+  { title: "ID", field: "id", width: 80 },
+  { title: "Nome", field: "nomeCompleto" },
+  { title: "Posição", field: "position" },
+  { title: "País", field: "country" },
+  { title: "Nascimento", field: "dataNascimento" },
+];
 
 const TableModelo = () => {
   const [data, setModelos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const modeloService = new ModeloService();
-    modeloService.getAll().then((data) => setModelos(data));
+  const fetchModelos = useCallback(async () => {
+    try {
+      const modeloService = new ModeloService();
+      const result = await modeloService.getAll();
+      setModelos(result);
+    } catch (error) {
+      console.error("Erro ao carregar modelos:", error);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
+  useEffect(() => {
+    fetchModelos();
+  }, [fetchModelos]);
+
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" mt={4}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
   return (
-    <div style={{ width: "100%" }}>
+    <div className="table-container">
       <MaterialTable
-        title="Basic Search Preview"
-        columns={[
-          { title: "ID", field: "id" },
-          { title: "Nome", field: "nomeCompleto" },
-          { title: "Position", field: "position" },
-          { title: "País", field: "country" },
-          { title: "Nascimento", field: "dataNascimento" },
-        ]}
+        title="Modelos Cadastrados"
+        columns={columns}
         data={data}
-        detailPanel={(rowData) => {
-          return (
-            <div>
-              <table className="subTabela">
-                <tr>
-                  <th>Height</th>
-                  <th>Bust</th>
-                  <th>Waist</th>
-                  <th>Hips</th>
-                  <th>Eyes</th>
-                  <th>Hair</th>
-                  <th>Boys</th>
-                  <th>Girls</th>
-                </tr>
-                <tr>
-                  <td>{rowData.height}</td>
-                  <td>{rowData.bust}</td>
-                  <td>{rowData.waist}</td>
-                  <td>{rowData.hips}</td>
-                  <td>{rowData.eyeColor}</td>
-                  <td>{rowData.hairColor}</td>
-                  <td>{rowData.boys}</td>
-                  <td>{rowData.girls}</td>
-                </tr>
-              </table>
+        detailPanel={(rowData) => (
+          <Box className="detail-panel">
+            <div className="detail-item">
+              <strong>Height:</strong> {rowData.height}
             </div>
-          );
-        }}
+            <div className="detail-item">
+              <strong>Bust:</strong> {rowData.bust}
+            </div>
+            <div className="detail-item">
+              <strong>Waist:</strong> {rowData.waist}
+            </div>
+            <div className="detail-item">
+              <strong>Hips:</strong> {rowData.hips}
+            </div>
+            <div className="detail-item">
+              <strong>Eyes:</strong> {rowData.eyeColor}
+            </div>
+            <div className="detail-item">
+              <strong>Hair:</strong> {rowData.hairColor}
+            </div>
+            <div className="detail-item">
+              <strong>Boys:</strong> {rowData.boys}
+            </div>
+            <div className="detail-item">
+              <strong>Girls:</strong> {rowData.girls}
+            </div>
+          </Box>
+        )}
         options={{
           search: true,
           pageSize: 20,
+          headerStyle: {
+            backgroundColor: "#f5f5f5",
+            fontWeight: "bold",
+          },
         }}
       />
     </div>
