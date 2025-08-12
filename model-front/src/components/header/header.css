@@ -1,15 +1,8 @@
 .app-header {
-    height: 20%;
-    align-items: center;
-    background: rgb(104, 5, 233);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
-}
-
-img {
-    height: 60px;
-    width: 220px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
+    background: linear-gradient(90deg, #1f1f1f, #2c2c2c);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
