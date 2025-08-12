@@ -1,43 +1,111 @@
-.Form_div {
-  width: 80%;
-  display: grid;
-  grid-template-columns: auto auto;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
-  justify-self: center;
+.Form {
+  background: #1f1f1f;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  color: #fff;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
-.Form {
+.Form h2 {
+  color: #ffd369;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.Form_div {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .Form_Group {
-  width: auto;
+  flex: 1;
+  min-width: 200px;
   display: flex;
-  justify-content: center;
-  justify-content: flex-end;
   flex-direction: column;
-  height: fit-content;
-}
-
-p {
-  margin-bottom: auto;
-  justify-self: center;
-  margin-left: 10%;
-  width: 50%;
-}
-
-#campoButao {
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
 }
 
 .Form_Field {
-  width: 200px;
-  justify-self: center;
-  margin-left: 10%;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.Form_Field:focus {
+  outline: none;
+  border-color: #ffd369;
+  box-shadow: 0 0 0 3px rgba(255, 211, 105, 0.3);
+}
+
+.Form_Field::placeholder {
+  color: #aaa;
+}
+
+.Form_Error {
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  margin-top: 0.25rem;
+}
+
+/* Botão */
+.Form_Btn {
+  background: linear-gradient(90deg, #ffd369, #ffbe55);
+  border: none;
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.Form_Btn:hover {
+  background: linear-gradient(90deg, #ffbe55, #ffd369);
+  transform: translateY(-2px);
+}
+
+/* Campo de upload de imagem */
+#campoFoto input[type="file"] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: #2c2c2c;
+  border: 1px dashed #666;
+  color: #ccc;
+  cursor: pointer;
+}
+
+#campoFoto input[type="file"]:hover {
+  border-color: #ffd369;
+  color: #ffd369;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .Form {
+    padding: 1rem;
+  }
+
+  .Form_div {
+    flex-direction: column;
+  }
+}
+#medidas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* no mobile, quebra linha */
+}
+
+#medidas .Form_Group {
+  flex: 1;             /* divide o espaço igualmente */
+  min-width: 120px;    /* evita que fique muito estreito */
+  max-width: 180px;    /* evita que estique demais */
 }
