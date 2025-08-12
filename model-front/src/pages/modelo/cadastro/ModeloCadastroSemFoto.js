@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/header/header";
-import SubMenu from "../components/SubMenu/SubMenu";
-import InputCadastrarModeloFotoPath from "../components/Inputs/InputCadastrarModeloFotoPath/inputCadastrarModeloFotoPath";
+import Header from "../../../components/header/header";
+import SubMenu from "../../../components/SubMenu/SubMenu";
+import InputCadastrarModeloFotoPath from "../../../components/Inputs/InputCadastrarModeloFotoPath/inputCadastrarModeloFotoPath";
 
 import "./ModeloCadastro.css";
 const ModeloCadastroSemFoto = () => (

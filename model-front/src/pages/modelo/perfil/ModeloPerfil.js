@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/header/header";
-import SubMenu from "../components/SubMenu/SubMenu";
-import ModeloService from "../services/ModeloService";
+import Header from "../../../components/header/header";
+import SubMenu from "../../../components/SubMenu/SubMenu";
+import ModeloService from "../../../services/ModeloService";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router";
 

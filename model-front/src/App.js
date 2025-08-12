@@ -2,14 +2,14 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Modelo from "./pages/Modelo";
-import ModeloCadastroSemFoto from "./pages/ModeloCadastroSemFoto";
-import ModeloEncontrar from "./pages/ModeloEncontrar";
-import ModeloListar from "./pages/ModeloListar";
-import ModeloAtualizarSemFoto from "./pages/ModeloAtualizarSemFoto";
-import ModeloDeletar from "./pages/ModeloDeletar";
-import ModeloPerfil from "./pages/ModeloPerfil";
+import Home from "./pages/home/Home";
+import Modelo from "./pages/modelo/main/Modelo";
+import ModeloCadastroSemFoto from "./pages/modelo/cadastro/ModeloCadastroSemFoto";
+import ModeloEncontrar from "./pages/modelo/encontrar/ModeloEncontrar";
+import ModeloListar from "./pages/modelo/listar/ModeloListar";
+import ModeloAtualizarSemFoto from "./pages/modelo/atualizar/ModeloAtualizarSemFoto";
+import ModeloDeletar from "./pages/modelo/delete/ModeloDeletar";
+import ModeloPerfil from "./pages/modelo/perfil/ModeloPerfil";
 import StatsPage from "./pages/StatsPage";
 
 function App() {

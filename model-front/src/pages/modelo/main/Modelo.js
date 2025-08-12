@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/header/header";
-import SubMenu from "../components/SubMenu/SubMenu";
-import Pagination from "../components/Pagination/Pagination";
-import CardModel from "../components/Cards/CardModel/CardModel";
-import ModeloService from "../services/ModeloService";
+import Header from "../../../components/header/header";
+import SubMenu from "../../../components/SubMenu/SubMenu";
+import Pagination from "../../../components/Pagination/Pagination";
+import CardModel from "../../../components/Cards/CardModel/CardModel";
+import ModeloService from "../../../services/ModeloService";
 import "./Modelo.css";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";

@@ -1,8 +1,8 @@
 import "./Home.css";
 import React, { useState, useEffect } from "react";
-import Header from "../components/header/header";
-import CardInfo from "../components/Cards/cardInfo";
-import ModeloService from "../services/ModeloService";
+import Header from "../../components/header/header";
+import CardInfo from "../../components/Cards/cardInfo";
+import ModeloService from "../../services/ModeloService";
 
 const Home = () => {
   const [aniversariante, setAniversariante] = new useState([]);
