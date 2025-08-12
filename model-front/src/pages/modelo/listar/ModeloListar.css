@@ -1,16 +1,9 @@
-.campo{
-   width: 84%;
-   height: auto;
-}
-
-.subTabela{
-   width:100%;
-}
-
-th{
-   text-align: center;
-}
-
-td{
-   text-align: center;
-}
+#container {
+   display: flex;
+ }
+ 
+ .campo {
+   flex: 1;
+   padding: 1rem;
+   margin-left: 220px; /* mesma largura do submenu */
+ }

@@ -1,54 +1,55 @@
 import React from "react";
-import "./SubMenu.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./SubMenu.css";
 
 const SubMenu = () => {
-  const [currCount] = React.useState(0);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <div className="sidebar">
       <Link
-        className={currCount === 0 && "active"}
-        href="#listar"
+        className={isActive("/modelo/listar") ? "active" : ""}
         to="/modelo/listar"
       >
-        <span className={currCount === 0 && "text-active"}>
+        <span className={isActive("/modelo/listar") ? "text-active" : ""}>
           <i className="fas fa-arrow-right"></i>Listar
         </span>
       </Link>
+
       <Link
-        className={currCount === 1 && "active"}
-        href="#achar"
+        className={isActive("/modelo/buscar") ? "active" : ""}
         to="/modelo/buscar"
       >
-        <span className={currCount === 1 && "text-active"}>
+        <span className={isActive("/modelo/buscar") ? "text-active" : ""}>
           <i className="fas fa-arrow-right"></i>Achar
         </span>
       </Link>
+
       <Link
-        className={currCount === 2 && "active"}
-        href="#cadastrarSemFoto"
+        className={isActive("/modelo/cadastro") ? "active" : ""}
         to="/modelo/cadastro"
       >
-        <span className={currCount === 2 && "text-active"}>
+        <span className={isActive("/modelo/cadastro") ? "text-active" : ""}>
           <i className="fas fa-arrow-right"></i>Cadastrar
         </span>
       </Link>
+
       <Link
-        className={currCount === 3 && "active"}
-        href="#atualizarSemFoto"
+        className={isActive("/modelo/alterar") ? "active" : ""}
         to="/modelo/alterar"
       >
-        <span className={currCount === 3 && "text-active"}>
+        <span className={isActive("/modelo/alterar") ? "text-active" : ""}>
           <i className="fas fa-arrow-right"></i>Atualizar
         </span>
       </Link>
+
       <Link
-        className={currCount === 4 && "active"}
-        href="#deleter"
+        className={isActive("/modelo/deletar") ? "active" : ""}
         to="/modelo/deletar"
       >
-        <span className={currCount === 4 && "text-active"}>
+        <span className={isActive("/modelo/deletar") ? "text-active" : ""}>
           <i className="fas fa-arrow-right"></i>Deletar
         </span>
       </Link>
