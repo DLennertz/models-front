@@ -1,9 +1,10 @@
 import "./cardInfo.css";
 
-const CardInfo = (info) => {
+const CardInfo = ({ nome, dataNascimento }) => {
   return (
     <div className="cardInfo">
-      <div>{info.props}</div>
+      <h3>{nome}</h3>
+      <p>{dataNascimento}</p>
     </div>
   );
 };

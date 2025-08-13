@@ -1,27 +1,22 @@
 import "./Home.css";
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header/header";
-import CardInfo from "../../components/Cards/cardInfo";
+import AniversariantesCarousel from "../../components/AniversarientesCarousel/AniversariantesCarousel";
 import ModeloService from "../../services/ModeloService";
 
 const Home = () => {
-  const [aniversariante, setAniversariante] = new useState([]);
+  const [aniversariantes, setAniversariantes] = useState([]);
 
   useEffect(() => {
     const modeloService = new ModeloService();
-
-    modeloService.getAniversariante().then((data) => setAniversariante(data));
-  }, [setAniversariante]);
+    modeloService.getAniversariante().then((data) => setAniversariantes(data));
+  }, []);
 
   return (
     <div>
       <Header />
-      <div className="infoRow" style={{ background: "violet" }}>
-        {Object.keys(aniversariante).map((key) => (
-          <div className="infoBox" style={{ background: "white" }}>
-            <CardInfo props={aniversariante[key].nomeCompleto} />
-          </div>
-        ))}
+      <div className="infoRow">
+        <AniversariantesCarousel aniversariantes={aniversariantes} />
       </div>
     </div>
   );
